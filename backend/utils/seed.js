@@ -51,7 +51,7 @@ const seed = async () => {
     { apartmentNumber: 'B102', buildingBlock: 'B', floor: 1, type: '2BHK', area: 980, monthlyMaintenance: 2800 },
   ];
   const apartments = await Apartment.insertMany(aptData);
-  console.log(`✅ ${apartments.length} Apartments created`);
+  console.log(` ${apartments.length} Apartments created`);
 
   // Create resident users and assign apartments
   const residents = [
@@ -71,7 +71,7 @@ const seed = async () => {
     apt.ownerId = user._id;
     apt.isOccupied = true;
     await apt.save();
-    console.log(`✅ Resident created: ${user.email} → Apt ${apt.apartmentNumber}`);
+    console.log(` Resident created: ${user.email} → Apt ${apt.apartmentNumber}`);
   }
 
   // Create sample notices
